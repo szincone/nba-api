@@ -14,8 +14,33 @@ request(
 
       $("table").text();
       cheerioTableparser($);
-      playerTable = $("table").parsetable(true, true, true);
-      console.log(playerTable);
+      playerTable = $("table").parsetable(true);
     }
+    // each column needs this pattern, to
+    // get rid of dups
+    // rank column
+    let rankHeaderColRaw = playerTable[0];
+    let rankHeaderCol = [];
+    rankHeaderCol.push(rankHeaderColRaw[0]);
+    rankHeaderColRaw.forEach(element => {
+      if (element !== rankHeaderColRaw[0]) {
+        rankHeaderCol.push(element);
+      }
+    });
+
+    // player column
+    let playerHeaderColRaw = playerTable[1];
+    let playerHeaderCol = [];
+    playerHeaderCol.push(playerHeaderColRaw[0]);
+    playerHeaderColRaw.forEach(element => {
+      if (element !== playerHeaderColRaw[0]) {
+        playerHeaderCol.push(
+          element
+            .match(/>(.*?)</g)
+            .toString()
+            .replace(/[<>]/g, ""),
+        );
+      }
+    });
   },
 );
