@@ -4,42 +4,62 @@ const cheerioTableparser = require("cheerio-tableparser");
 request(
   "https://www.basketball-reference.com/leagues/NBA_2017_per_game.html",
   (error, res, html) => {
+    let playerTableRaw = [];
     let playerTable = [];
     if (!error && res.statusCode === 200) {
       $ = cheerio.load(html);
-      // const table = $("tbody")
-      //   .children("tr")
-      //   .text();
-      // console.log(table);
-
+      // gets player table from website
       $("table").text();
       cheerioTableparser($);
-      playerTable = $("table").parsetable(true);
+      playerTableRaw = $("table").parsetable(true);
     }
-    // each column needs this pattern, to
-    // get rid of dups
-    // rank column
-    let rankHeaderColRaw = playerTable[0];
-    let rankHeaderCol = [];
-    rankHeaderCol.push(rankHeaderColRaw[0]);
-    rankHeaderColRaw.forEach(element => {
-      if (element !== rankHeaderColRaw[0]) {
-        rankHeaderCol.push(element);
+    // removing duplicate players NOT WORKING
+    for (let i = 0; i <= playerTableRaw.length; i++) {
+      for (let j = 0; j <= playerTableRaw.length; j++) {
+        if (playerTableRaw[i][j] !== playerTableRaw[i][j + 1]) {
+          console.log("FINNA", playerTableRaw[i][j]);
+          // playerTable.push(playerTableRaw[i][j]);
+        } else {
+          // do nothing
+        }
+      }
+    }
+    // === COLUMNS === //
+    // rank column - each col needs this pattern to get rid of duplicates
+    let rankColRaw = playerTable[0];
+    let rankCol = [];
+    rankCol.push(rankColRaw[0]);
+    rankColRaw.forEach(element => {
+      if (element !== rankColRaw[0]) {
+        // all items in 'rank' column
+        rankCol.push(element);
       }
     });
-
+    console.log("TEST", rankCol);
     // player column
-    let playerHeaderColRaw = playerTable[1];
-    let playerHeaderCol = [];
-    playerHeaderCol.push(playerHeaderColRaw[0]);
-    playerHeaderColRaw.forEach(element => {
-      if (element !== playerHeaderColRaw[0]) {
-        playerHeaderCol.push(
+    let playerColRaw = playerTable[1];
+    let playerCol = [];
+    playerCol.push(playerColRaw[0]);
+    playerColRaw.forEach(element => {
+      if (element !== playerColRaw[0]) {
+        // gets inner text from a-tag using regex
+        // to match and get rid of angle brackets
+        playerCol.push(
           element
             .match(/>(.*?)</g)
             .toString()
             .replace(/[<>]/g, ""),
         );
+      }
+    });
+    // position column
+    let posColRaw = playerTable[2];
+    let posCol = [];
+    posCol.push(posColRaw[0]);
+    posColRaw.forEach(element => {
+      if (element !== posColRaw[0]) {
+        // all items in 'pos' column
+        posCol.push(element);
       }
     });
   },
