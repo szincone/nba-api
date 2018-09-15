@@ -90,7 +90,7 @@ request(
     gamesPlayedColRaw.forEach(element => {
       if (element !== gamesPlayedColRaw[0]) {
         // all items in 'gamesPlayed' column
-        gamesPlayedCol.push(element);
+        gamesPlayedCol.push(parseInt(element, 10));
       }
     });
 
@@ -101,7 +101,7 @@ request(
     minsPerGameColRaw.forEach(element => {
       if (element !== minsPerGameColRaw[0]) {
         // all items in 'minsPerGame' column
-        minsPerGameCol.push(element);
+        minsPerGameCol.push(parseInt(element, 10));
       }
     });
 
@@ -112,7 +112,7 @@ request(
       playerCol[385],
       "Position",
       posCol[385],
-      "TeamName",
+      "Team",
       teamCol[385],
       "Games Played",
       gamesPlayedCol[385],
