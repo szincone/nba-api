@@ -1,5 +1,5 @@
 {
-  "name": "nba_api",
+  "name": "scraper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,14 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Sawyer Zincone",
+  "license": "",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "cheerio-tableparser": "^1.0.1",
     "request": "^2.88.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
   }
 }

@@ -2,7 +2,8 @@ const request = require("request");
 const cheerio = require("cheerio");
 // since our data is a table, use table parser to clean up
 const cheerioTableparser = require("cheerio-tableparser");
-
+// result vars
+let playersArray = [];
 // sends request to site to be scraped
 request(
   "https://www.basketball-reference.com/leagues/NBA_2017_per_game.html",
@@ -350,7 +351,6 @@ request(
     });
 
     // creating array of players
-    let playersArray = [];
     for (let i = 0; i < playerCol.length; i++) {
       // object for seeding api
       let player = {
@@ -367,5 +367,6 @@ request(
         // do nothing
       }
     }
+    return playersArray;
   },
 );
