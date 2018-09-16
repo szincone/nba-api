@@ -90,7 +90,7 @@ request(
     gamesPlayedColRaw.forEach(element => {
       if (element !== gamesPlayedColRaw[0]) {
         // all items in 'gamesPlayed' column
-        gamesPlayedCol.push(parseInt(element, 10));
+        gamesPlayedCol.push(parseFloat(element));
       }
     });
 
@@ -101,23 +101,128 @@ request(
     minsPerGameColRaw.forEach(element => {
       if (element !== minsPerGameColRaw[0]) {
         // all items in 'minsPerGame' column
-        minsPerGameCol.push(parseInt(element, 10));
+        minsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // field goals per game column
+    let fieldGoalsPerGameColRaw = playerTable[8];
+    let fieldGoalsPerGameCol = [];
+    fieldGoalsPerGameCol.push(fieldGoalsPerGameColRaw[0]);
+    fieldGoalsPerGameColRaw.forEach(element => {
+      if (element !== fieldGoalsPerGameColRaw[0]) {
+        // all items in 'fieldGoalsPerGame' column
+        fieldGoalsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // field goal attempts per game column
+    let fieldGoalAttemptsPerGameColRaw = playerTable[9];
+    let fieldGoalAttemptsPerGameCol = [];
+    fieldGoalAttemptsPerGameCol.push(fieldGoalAttemptsPerGameColRaw[0]);
+    fieldGoalAttemptsPerGameColRaw.forEach(element => {
+      if (element !== fieldGoalAttemptsPerGameColRaw[0]) {
+        // all items in 'fieldGoalAttemptsPerGame' column
+        fieldGoalAttemptsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // field goal percentage column
+    let fieldGoalPercentageColRaw = playerTable[10];
+    let fieldGoalPercentageCol = [];
+    fieldGoalPercentageCol.push(fieldGoalPercentageColRaw[0]);
+    fieldGoalPercentageColRaw.forEach(element => {
+      if (element !== fieldGoalPercentageColRaw[0]) {
+        // all items in 'fieldGoalPercentage' column
+        fieldGoalPercentageCol.push(parseFloat(element));
+      }
+    });
+
+    // 3-pointers made per game column
+    let threePointersPerGameColRaw = playerTable[11];
+    let threePointersPerGameCol = [];
+    threePointersPerGameCol.push(threePointersPerGameColRaw[0]);
+    threePointersPerGameColRaw.forEach(element => {
+      if (element !== threePointersPerGameColRaw[0]) {
+        // all items in 'threePointersPerGame' column
+        threePointersPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // 3-pointers attempted per game column
+    let threePointersAttemptedPerGameColRaw = playerTable[12];
+    let threePointersAttemptedPerGameCol = [];
+    threePointersAttemptedPerGameCol.push(
+      threePointersAttemptedPerGameColRaw[0],
+    );
+    threePointersAttemptedPerGameColRaw.forEach(element => {
+      if (element !== threePointersAttemptedPerGameColRaw[0]) {
+        // all items in 'threePointersAttemptedPerGame' column
+        threePointersAttemptedPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // 3-pointer percentage column
+    let threePointerPercentageColRaw = playerTable[13];
+    let threePointerPercentageCol = [];
+    threePointerPercentageCol.push(threePointerPercentageColRaw[0]);
+    threePointerPercentageColRaw.forEach(element => {
+      if (element !== threePointerPercentageColRaw[0]) {
+        // all items in 'threePointerPercentage' column
+        threePointerPercentageCol.push(parseFloat(element));
+      }
+    });
+
+    // 2-pointers made per game column
+    let twoPointersPerGameColRaw = playerTable[14];
+    let twoPointersPerGameCol = [];
+    twoPointersPerGameCol.push(twoPointersPerGameColRaw[0]);
+    twoPointersPerGameColRaw.forEach(element => {
+      if (element !== twoPointersPerGameColRaw[0]) {
+        // all items in 'twoPointersPerGame' column
+        twoPointersPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // 3-pointers attempted per game column
+    let twoPointersAttemptedPerGameColRaw = playerTable[15];
+    let twoPointersAttemptedPerGameCol = [];
+    twoPointersAttemptedPerGameCol.push(twoPointersAttemptedPerGameColRaw[0]);
+    twoPointersAttemptedPerGameColRaw.forEach(element => {
+      if (element !== twoPointersAttemptedPerGameColRaw[0]) {
+        // all items in 'twoPointersAttemptedPerGame' column
+        twoPointersAttemptedPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // 3-pointer percentage column
+    let twoPointerPercentageColRaw = playerTable[16];
+    let twoPointerPercentageCol = [];
+    twoPointerPercentageCol.push(twoPointerPercentageColRaw[0]);
+    twoPointerPercentageColRaw.forEach(element => {
+      if (element !== twoPointerPercentageColRaw[0]) {
+        // all items in 'twoPointerPercentage' column
+        twoPointerPercentageCol.push(parseFloat(element));
       }
     });
 
     console.log(
       "Rank",
-      rankCol[385],
+      rankCol[2],
       "PlayerName",
-      playerCol[385],
+      playerCol[2],
       "Position",
-      posCol[385],
+      posCol[2],
       "Team",
-      teamCol[385],
+      teamCol[2],
       "Games Played",
-      gamesPlayedCol[385],
+      gamesPlayedCol[2],
       "Minutes per game",
-      minsPerGameCol[385],
+      minsPerGameCol[2],
+      "Field Goals per game",
+      fieldGoalsPerGameCol[2],
+      "Field Goal Attempts per game",
+      fieldGoalAttemptsPerGameCol[2],
     );
   },
 );
