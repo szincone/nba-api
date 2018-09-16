@@ -105,7 +105,7 @@ request(
       }
     });
 
-    // field goals per game column
+    // total field goals per game column
     let fieldGoalsPerGameColRaw = playerTable[8];
     let fieldGoalsPerGameCol = [];
     fieldGoalsPerGameCol.push(fieldGoalsPerGameColRaw[0]);
@@ -116,7 +116,7 @@ request(
       }
     });
 
-    // field goal attempts per game column
+    // total field goal attempts per game column
     let fieldGoalAttemptsPerGameColRaw = playerTable[9];
     let fieldGoalAttemptsPerGameCol = [];
     fieldGoalAttemptsPerGameCol.push(fieldGoalAttemptsPerGameColRaw[0]);
@@ -127,7 +127,7 @@ request(
       }
     });
 
-    // field goal percentage column
+    // total field goal percentage column
     let fieldGoalPercentageColRaw = playerTable[10];
     let fieldGoalPercentageCol = [];
     fieldGoalPercentageCol.push(fieldGoalPercentageColRaw[0]);
@@ -184,7 +184,7 @@ request(
       }
     });
 
-    // 3-pointers attempted per game column
+    // 2-pointers attempted per game column
     let twoPointersAttemptedPerGameColRaw = playerTable[15];
     let twoPointersAttemptedPerGameCol = [];
     twoPointersAttemptedPerGameCol.push(twoPointersAttemptedPerGameColRaw[0]);
@@ -195,7 +195,7 @@ request(
       }
     });
 
-    // 3-pointer percentage column
+    // 2-pointer percentage column
     let twoPointerPercentageColRaw = playerTable[16];
     let twoPointerPercentageCol = [];
     twoPointerPercentageCol.push(twoPointerPercentageColRaw[0]);
@@ -206,23 +206,206 @@ request(
       }
     });
 
+    // effective field goal percentage column
+    let effFieldGoalPercentageColRaw = playerTable[17];
+    let effFieldGoalPercentageCol = [];
+    effFieldGoalPercentageCol.push(effFieldGoalPercentageColRaw[0]);
+    effFieldGoalPercentageColRaw.forEach(element => {
+      if (element !== effFieldGoalPercentageColRaw[0]) {
+        // all items in 'effFieldGoalPercentage' column
+        effFieldGoalPercentageCol.push(parseFloat(element));
+      }
+    });
+
+    // free-throws made per game column
+    let freeThrowsPerGameColRaw = playerTable[18];
+    let freeThrowsPerGameCol = [];
+    freeThrowsPerGameCol.push(freeThrowsPerGameColRaw[0]);
+    freeThrowsPerGameColRaw.forEach(element => {
+      if (element !== freeThrowsPerGameColRaw[0]) {
+        // all items in 'freeThrowsPerGame' column
+        freeThrowsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // free-throws attempted per game column
+    let freeThrowsAttemptedPerGameColRaw = playerTable[19];
+    let freeThrowsAttemptedPerGameCol = [];
+    freeThrowsAttemptedPerGameCol.push(freeThrowsAttemptedPerGameColRaw[0]);
+    freeThrowsAttemptedPerGameColRaw.forEach(element => {
+      if (element !== freeThrowsAttemptedPerGameColRaw[0]) {
+        // all items in 'freeThrowsAttemptedPerGame' column
+        freeThrowsAttemptedPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // free-throw percentage column
+    let freeThrowPercentageColRaw = playerTable[20];
+    let freeThrowPercentageCol = [];
+    freeThrowPercentageCol.push(freeThrowPercentageColRaw[0]);
+    freeThrowPercentageColRaw.forEach(element => {
+      if (element !== freeThrowPercentageColRaw[0]) {
+        // all items in 'freeThrowPercentage' column
+        freeThrowPercentageCol.push(parseFloat(element));
+      }
+    });
+
+    // offensive rebounds per game column
+    let offensiveBoardsPerGameColRaw = playerTable[21];
+    let offensiveBoardsPerGameCol = [];
+    offensiveBoardsPerGameCol.push(offensiveBoardsPerGameColRaw[0]);
+    offensiveBoardsPerGameColRaw.forEach(element => {
+      if (element !== offensiveBoardsPerGameColRaw[0]) {
+        // all items in 'offensiveBoardsPerGame' column
+        offensiveBoardsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // defensive rebounds per game column
+    let defensiveBoardsPerGameColRaw = playerTable[22];
+    let defensiveBoardsPerGameCol = [];
+    defensiveBoardsPerGameCol.push(defensiveBoardsPerGameColRaw[0]);
+    defensiveBoardsPerGameColRaw.forEach(element => {
+      if (element !== defensiveBoardsPerGameColRaw[0]) {
+        // all items in 'defensiveBoardsPerGame' column
+        defensiveBoardsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // total rebounds per game column
+    let totalBoardsPerGameColRaw = playerTable[23];
+    let totalBoardsPerGameCol = [];
+    totalBoardsPerGameCol.push(totalBoardsPerGameColRaw[0]);
+    totalBoardsPerGameColRaw.forEach(element => {
+      if (element !== totalBoardsPerGameColRaw[0]) {
+        // all items in 'totalBoardsPerGame' column
+        totalBoardsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // assists per game column
+    let assistsPerGameColRaw = playerTable[24];
+    let assistsPerGameCol = [];
+    assistsPerGameCol.push(assistsPerGameColRaw[0]);
+    assistsPerGameColRaw.forEach(element => {
+      if (element !== assistsPerGameColRaw[0]) {
+        // all items in 'assistsPerGame' column
+        assistsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // steals per game column
+    let stealsPerGameColRaw = playerTable[25];
+    let stealsPerGameCol = [];
+    stealsPerGameCol.push(stealsPerGameColRaw[0]);
+    stealsPerGameColRaw.forEach(element => {
+      if (element !== stealsPerGameColRaw[0]) {
+        // all items in 'stealsPerGame' column
+        stealsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // blocks per game column
+    let blocksPerGameColRaw = playerTable[26];
+    let blocksPerGameCol = [];
+    blocksPerGameCol.push(blocksPerGameColRaw[0]);
+    blocksPerGameColRaw.forEach(element => {
+      if (element !== blocksPerGameColRaw[0]) {
+        // all items in 'blocksPerGame' column
+        blocksPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // turnovers per game column
+    let turnoversPerGameColRaw = playerTable[27];
+    let turnoversPerGameCol = [];
+    turnoversPerGameCol.push(turnoversPerGameColRaw[0]);
+    turnoversPerGameColRaw.forEach(element => {
+      if (element !== turnoversPerGameColRaw[0]) {
+        // all items in 'turnoversPerGame' column
+        turnoversPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // personal fouls per game column
+    let personalFoulsPerGameColRaw = playerTable[28];
+    let personalFoulsPerGameCol = [];
+    personalFoulsPerGameCol.push(personalFoulsPerGameColRaw[0]);
+    personalFoulsPerGameColRaw.forEach(element => {
+      if (element !== personalFoulsPerGameColRaw[0]) {
+        // all items in 'personalFoulsPerGame' column
+        personalFoulsPerGameCol.push(parseFloat(element));
+      }
+    });
+
+    // points per game column
+    let pointsPerGameColRaw = playerTable[29];
+    let pointsPerGameCol = [];
+    pointsPerGameCol.push(pointsPerGameColRaw[0]);
+    pointsPerGameColRaw.forEach(element => {
+      if (element !== pointsPerGameColRaw[0]) {
+        // all items in 'pointsPerGame' column
+        pointsPerGameCol.push(parseFloat(element));
+      }
+    });
+
     console.log(
       "Rank",
-      rankCol[2],
+      rankCol[1],
       "PlayerName",
-      playerCol[2],
+      playerCol[1],
       "Position",
-      posCol[2],
+      posCol[1],
       "Team",
-      teamCol[2],
+      teamCol[1],
       "Games Played",
-      gamesPlayedCol[2],
+      gamesPlayedCol[1],
       "Minutes per game",
-      minsPerGameCol[2],
+      minsPerGameCol[1],
       "Field Goals per game",
-      fieldGoalsPerGameCol[2],
+      fieldGoalsPerGameCol[1],
       "Field Goal Attempts per game",
-      fieldGoalAttemptsPerGameCol[2],
+      fieldGoalAttemptsPerGameCol[1],
+      "Field Goal percentage per game",
+      fieldGoalPercentageCol[1],
+      "threePointersPerGameCol",
+      threePointersPerGameCol[1],
+      "threePointersAttemptedPerGameCol",
+      threePointersAttemptedPerGameCol[1],
+      "threePointerPercentageCol",
+      threePointerPercentageCol[1],
+      "twoPointersPerGameCol",
+      twoPointersPerGameCol[1],
+      "twoPointersAttemptedPerGameCol",
+      twoPointersAttemptedPerGameCol[1],
+      "twoPointerPercentageCol",
+      twoPointerPercentageCol[1],
+      "effFieldGoalPercentageCol",
+      effFieldGoalPercentageCol[1],
+      "freeThrowsPerGameCol",
+      freeThrowsPerGameCol[1],
+      "freeThrowsAttemptedPerGameCol",
+      freeThrowsAttemptedPerGameCol[1],
+      "freeThrowPercentageCol",
+      freeThrowPercentageCol[1],
+      "offensiveBoardsPerGameCol",
+      offensiveBoardsPerGameCol[1],
+      "defensiveBoardsPerGameCol",
+      defensiveBoardsPerGameCol[1],
+      "totalBoardsPerGameCol",
+      totalBoardsPerGameCol[1],
+      "assistsPerGameCol",
+      assistsPerGameCol[1],
+      "stealsPerGameCol",
+      stealsPerGameCol[1],
+      "blocksPerGameCol",
+      blocksPerGameCol[1],
+      "turnoversPerGameCol",
+      turnoversPerGameCol[1],
+      "personalFoulsPerGameCol",
+      personalFoulsPerGameCol[1],
+      "pointsPerGameCol",
+      pointsPerGameCol[1],
     );
   },
 );
