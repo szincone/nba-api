@@ -370,3 +370,5 @@ request(
     return playersArray;
   },
 );
+
+console.log("PlayersArray", playersArray);
