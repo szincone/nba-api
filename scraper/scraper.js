@@ -24,11 +24,11 @@ request(
     // first row is header, add this to avoid dups later
     rankCol.push(rankColRaw[0]);
     // iterate over each row of table and assign to new array
-    rankColRaw.forEach(element => {
+    rankColRaw.forEach(stat => {
       // if not equal to header(since its already in the array), add to new array
-      if (element !== rankColRaw[0]) {
+      if (stat !== rankColRaw[0]) {
         // all items in 'rank' column
-        rankCol.push(element);
+        rankCol.push(stat);
       }
     });
 
@@ -36,12 +36,12 @@ request(
     let playerColRaw = playerTable[1];
     let playerCol = [];
     playerCol.push(playerColRaw[0]);
-    playerColRaw.forEach(element => {
-      if (element !== playerColRaw[0]) {
+    playerColRaw.forEach(stat => {
+      if (stat !== playerColRaw[0]) {
         // gets inner text from a-tag using regex
         // to match and get rid of angle brackets
         playerCol.push(
-          element
+          stat
             .match(/>(.*?)</g)
             .toString()
             .replace(/[<>]/g, ""),
@@ -53,10 +53,10 @@ request(
     let posColRaw = playerTable[2];
     let posCol = [];
     posCol.push(posColRaw[0]);
-    posColRaw.forEach(element => {
-      if (element !== posColRaw[0]) {
+    posColRaw.forEach(stat => {
+      if (stat !== posColRaw[0]) {
         // all items in 'pos' column
-        posCol.push(element);
+        posCol.push(stat);
       }
     });
 
@@ -64,17 +64,17 @@ request(
     let teamColRaw = playerTable[4];
     let teamCol = [];
     teamCol.push(teamColRaw[0]);
-    teamColRaw.forEach(element => {
-      if (element !== teamColRaw[0]) {
+    teamColRaw.forEach(stat => {
+      if (stat !== teamColRaw[0]) {
         // account for variation on TOTAL team for
         // traded players is displayed on table
-        if (element === "TOT") {
+        if (stat === "TOT") {
           // gets inner text from a-tag using regex
           // to match and get rid of angle brackets
           teamCol.push("TOT");
         } else {
           teamCol.push(
-            element
+            stat
               .match(/>(.*?)</g)
               .toString()
               .replace(/[<>]/g, ""),
@@ -87,10 +87,10 @@ request(
     let gamesPlayedColRaw = playerTable[5];
     let gamesPlayedCol = [];
     gamesPlayedCol.push(gamesPlayedColRaw[0]);
-    gamesPlayedColRaw.forEach(element => {
-      if (element !== gamesPlayedColRaw[0]) {
+    gamesPlayedColRaw.forEach(stat => {
+      if (stat !== gamesPlayedColRaw[0]) {
         // all items in 'gamesPlayed' column
-        gamesPlayedCol.push(parseFloat(element));
+        gamesPlayedCol.push(parseFloat(stat));
       }
     });
 
@@ -98,10 +98,10 @@ request(
     let minsPerGameColRaw = playerTable[7];
     let minsPerGameCol = [];
     minsPerGameCol.push(minsPerGameColRaw[0]);
-    minsPerGameColRaw.forEach(element => {
-      if (element !== minsPerGameColRaw[0]) {
+    minsPerGameColRaw.forEach(stat => {
+      if (stat !== minsPerGameColRaw[0]) {
         // all items in 'minsPerGame' column
-        minsPerGameCol.push(parseFloat(element));
+        minsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -109,10 +109,10 @@ request(
     let fieldGoalsPerGameColRaw = playerTable[8];
     let fieldGoalsPerGameCol = [];
     fieldGoalsPerGameCol.push(fieldGoalsPerGameColRaw[0]);
-    fieldGoalsPerGameColRaw.forEach(element => {
-      if (element !== fieldGoalsPerGameColRaw[0]) {
+    fieldGoalsPerGameColRaw.forEach(stat => {
+      if (stat !== fieldGoalsPerGameColRaw[0]) {
         // all items in 'fieldGoalsPerGame' column
-        fieldGoalsPerGameCol.push(parseFloat(element));
+        fieldGoalsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -120,10 +120,10 @@ request(
     let fieldGoalAttemptsPerGameColRaw = playerTable[9];
     let fieldGoalAttemptsPerGameCol = [];
     fieldGoalAttemptsPerGameCol.push(fieldGoalAttemptsPerGameColRaw[0]);
-    fieldGoalAttemptsPerGameColRaw.forEach(element => {
-      if (element !== fieldGoalAttemptsPerGameColRaw[0]) {
+    fieldGoalAttemptsPerGameColRaw.forEach(stat => {
+      if (stat !== fieldGoalAttemptsPerGameColRaw[0]) {
         // all items in 'fieldGoalAttemptsPerGame' column
-        fieldGoalAttemptsPerGameCol.push(parseFloat(element));
+        fieldGoalAttemptsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -131,10 +131,10 @@ request(
     let fieldGoalPercentageColRaw = playerTable[10];
     let fieldGoalPercentageCol = [];
     fieldGoalPercentageCol.push(fieldGoalPercentageColRaw[0]);
-    fieldGoalPercentageColRaw.forEach(element => {
-      if (element !== fieldGoalPercentageColRaw[0]) {
+    fieldGoalPercentageColRaw.forEach(stat => {
+      if (stat !== fieldGoalPercentageColRaw[0]) {
         // all items in 'fieldGoalPercentage' column
-        fieldGoalPercentageCol.push(parseFloat(element));
+        fieldGoalPercentageCol.push(parseFloat(stat));
       }
     });
 
@@ -142,10 +142,10 @@ request(
     let threePointersPerGameColRaw = playerTable[11];
     let threePointersPerGameCol = [];
     threePointersPerGameCol.push(threePointersPerGameColRaw[0]);
-    threePointersPerGameColRaw.forEach(element => {
-      if (element !== threePointersPerGameColRaw[0]) {
+    threePointersPerGameColRaw.forEach(stat => {
+      if (stat !== threePointersPerGameColRaw[0]) {
         // all items in 'threePointersPerGame' column
-        threePointersPerGameCol.push(parseFloat(element));
+        threePointersPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -155,10 +155,10 @@ request(
     threePointersAttemptedPerGameCol.push(
       threePointersAttemptedPerGameColRaw[0],
     );
-    threePointersAttemptedPerGameColRaw.forEach(element => {
-      if (element !== threePointersAttemptedPerGameColRaw[0]) {
+    threePointersAttemptedPerGameColRaw.forEach(stat => {
+      if (stat !== threePointersAttemptedPerGameColRaw[0]) {
         // all items in 'threePointersAttemptedPerGame' column
-        threePointersAttemptedPerGameCol.push(parseFloat(element));
+        threePointersAttemptedPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -166,10 +166,10 @@ request(
     let threePointerPercentageColRaw = playerTable[13];
     let threePointerPercentageCol = [];
     threePointerPercentageCol.push(threePointerPercentageColRaw[0]);
-    threePointerPercentageColRaw.forEach(element => {
-      if (element !== threePointerPercentageColRaw[0]) {
+    threePointerPercentageColRaw.forEach(stat => {
+      if (stat !== threePointerPercentageColRaw[0]) {
         // all items in 'threePointerPercentage' column
-        threePointerPercentageCol.push(parseFloat(element));
+        threePointerPercentageCol.push(parseFloat(stat));
       }
     });
 
@@ -177,10 +177,10 @@ request(
     let twoPointersPerGameColRaw = playerTable[14];
     let twoPointersPerGameCol = [];
     twoPointersPerGameCol.push(twoPointersPerGameColRaw[0]);
-    twoPointersPerGameColRaw.forEach(element => {
-      if (element !== twoPointersPerGameColRaw[0]) {
+    twoPointersPerGameColRaw.forEach(stat => {
+      if (stat !== twoPointersPerGameColRaw[0]) {
         // all items in 'twoPointersPerGame' column
-        twoPointersPerGameCol.push(parseFloat(element));
+        twoPointersPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -188,10 +188,10 @@ request(
     let twoPointersAttemptedPerGameColRaw = playerTable[15];
     let twoPointersAttemptedPerGameCol = [];
     twoPointersAttemptedPerGameCol.push(twoPointersAttemptedPerGameColRaw[0]);
-    twoPointersAttemptedPerGameColRaw.forEach(element => {
-      if (element !== twoPointersAttemptedPerGameColRaw[0]) {
+    twoPointersAttemptedPerGameColRaw.forEach(stat => {
+      if (stat !== twoPointersAttemptedPerGameColRaw[0]) {
         // all items in 'twoPointersAttemptedPerGame' column
-        twoPointersAttemptedPerGameCol.push(parseFloat(element));
+        twoPointersAttemptedPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -199,10 +199,10 @@ request(
     let twoPointerPercentageColRaw = playerTable[16];
     let twoPointerPercentageCol = [];
     twoPointerPercentageCol.push(twoPointerPercentageColRaw[0]);
-    twoPointerPercentageColRaw.forEach(element => {
-      if (element !== twoPointerPercentageColRaw[0]) {
+    twoPointerPercentageColRaw.forEach(stat => {
+      if (stat !== twoPointerPercentageColRaw[0]) {
         // all items in 'twoPointerPercentage' column
-        twoPointerPercentageCol.push(parseFloat(element));
+        twoPointerPercentageCol.push(parseFloat(stat));
       }
     });
 
@@ -210,10 +210,10 @@ request(
     let effFieldGoalPercentageColRaw = playerTable[17];
     let effFieldGoalPercentageCol = [];
     effFieldGoalPercentageCol.push(effFieldGoalPercentageColRaw[0]);
-    effFieldGoalPercentageColRaw.forEach(element => {
-      if (element !== effFieldGoalPercentageColRaw[0]) {
+    effFieldGoalPercentageColRaw.forEach(stat => {
+      if (stat !== effFieldGoalPercentageColRaw[0]) {
         // all items in 'effFieldGoalPercentage' column
-        effFieldGoalPercentageCol.push(parseFloat(element));
+        effFieldGoalPercentageCol.push(parseFloat(stat));
       }
     });
 
@@ -221,10 +221,10 @@ request(
     let freeThrowsPerGameColRaw = playerTable[18];
     let freeThrowsPerGameCol = [];
     freeThrowsPerGameCol.push(freeThrowsPerGameColRaw[0]);
-    freeThrowsPerGameColRaw.forEach(element => {
-      if (element !== freeThrowsPerGameColRaw[0]) {
+    freeThrowsPerGameColRaw.forEach(stat => {
+      if (stat !== freeThrowsPerGameColRaw[0]) {
         // all items in 'freeThrowsPerGame' column
-        freeThrowsPerGameCol.push(parseFloat(element));
+        freeThrowsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -232,10 +232,10 @@ request(
     let freeThrowsAttemptedPerGameColRaw = playerTable[19];
     let freeThrowsAttemptedPerGameCol = [];
     freeThrowsAttemptedPerGameCol.push(freeThrowsAttemptedPerGameColRaw[0]);
-    freeThrowsAttemptedPerGameColRaw.forEach(element => {
-      if (element !== freeThrowsAttemptedPerGameColRaw[0]) {
+    freeThrowsAttemptedPerGameColRaw.forEach(stat => {
+      if (stat !== freeThrowsAttemptedPerGameColRaw[0]) {
         // all items in 'freeThrowsAttemptedPerGame' column
-        freeThrowsAttemptedPerGameCol.push(parseFloat(element));
+        freeThrowsAttemptedPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -243,10 +243,10 @@ request(
     let freeThrowPercentageColRaw = playerTable[20];
     let freeThrowPercentageCol = [];
     freeThrowPercentageCol.push(freeThrowPercentageColRaw[0]);
-    freeThrowPercentageColRaw.forEach(element => {
-      if (element !== freeThrowPercentageColRaw[0]) {
+    freeThrowPercentageColRaw.forEach(stat => {
+      if (stat !== freeThrowPercentageColRaw[0]) {
         // all items in 'freeThrowPercentage' column
-        freeThrowPercentageCol.push(parseFloat(element));
+        freeThrowPercentageCol.push(parseFloat(stat));
       }
     });
 
@@ -254,10 +254,10 @@ request(
     let offensiveBoardsPerGameColRaw = playerTable[21];
     let offensiveBoardsPerGameCol = [];
     offensiveBoardsPerGameCol.push(offensiveBoardsPerGameColRaw[0]);
-    offensiveBoardsPerGameColRaw.forEach(element => {
-      if (element !== offensiveBoardsPerGameColRaw[0]) {
+    offensiveBoardsPerGameColRaw.forEach(stat => {
+      if (stat !== offensiveBoardsPerGameColRaw[0]) {
         // all items in 'offensiveBoardsPerGame' column
-        offensiveBoardsPerGameCol.push(parseFloat(element));
+        offensiveBoardsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -265,10 +265,10 @@ request(
     let defensiveBoardsPerGameColRaw = playerTable[22];
     let defensiveBoardsPerGameCol = [];
     defensiveBoardsPerGameCol.push(defensiveBoardsPerGameColRaw[0]);
-    defensiveBoardsPerGameColRaw.forEach(element => {
-      if (element !== defensiveBoardsPerGameColRaw[0]) {
+    defensiveBoardsPerGameColRaw.forEach(stat => {
+      if (stat !== defensiveBoardsPerGameColRaw[0]) {
         // all items in 'defensiveBoardsPerGame' column
-        defensiveBoardsPerGameCol.push(parseFloat(element));
+        defensiveBoardsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -276,10 +276,10 @@ request(
     let totalBoardsPerGameColRaw = playerTable[23];
     let totalBoardsPerGameCol = [];
     totalBoardsPerGameCol.push(totalBoardsPerGameColRaw[0]);
-    totalBoardsPerGameColRaw.forEach(element => {
-      if (element !== totalBoardsPerGameColRaw[0]) {
+    totalBoardsPerGameColRaw.forEach(stat => {
+      if (stat !== totalBoardsPerGameColRaw[0]) {
         // all items in 'totalBoardsPerGame' column
-        totalBoardsPerGameCol.push(parseFloat(element));
+        totalBoardsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -287,10 +287,10 @@ request(
     let assistsPerGameColRaw = playerTable[24];
     let assistsPerGameCol = [];
     assistsPerGameCol.push(assistsPerGameColRaw[0]);
-    assistsPerGameColRaw.forEach(element => {
-      if (element !== assistsPerGameColRaw[0]) {
+    assistsPerGameColRaw.forEach(stat => {
+      if (stat !== assistsPerGameColRaw[0]) {
         // all items in 'assistsPerGame' column
-        assistsPerGameCol.push(parseFloat(element));
+        assistsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -298,10 +298,10 @@ request(
     let stealsPerGameColRaw = playerTable[25];
     let stealsPerGameCol = [];
     stealsPerGameCol.push(stealsPerGameColRaw[0]);
-    stealsPerGameColRaw.forEach(element => {
-      if (element !== stealsPerGameColRaw[0]) {
+    stealsPerGameColRaw.forEach(stat => {
+      if (stat !== stealsPerGameColRaw[0]) {
         // all items in 'stealsPerGame' column
-        stealsPerGameCol.push(parseFloat(element));
+        stealsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -309,10 +309,10 @@ request(
     let blocksPerGameColRaw = playerTable[26];
     let blocksPerGameCol = [];
     blocksPerGameCol.push(blocksPerGameColRaw[0]);
-    blocksPerGameColRaw.forEach(element => {
-      if (element !== blocksPerGameColRaw[0]) {
+    blocksPerGameColRaw.forEach(stat => {
+      if (stat !== blocksPerGameColRaw[0]) {
         // all items in 'blocksPerGame' column
-        blocksPerGameCol.push(parseFloat(element));
+        blocksPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -320,10 +320,10 @@ request(
     let turnoversPerGameColRaw = playerTable[27];
     let turnoversPerGameCol = [];
     turnoversPerGameCol.push(turnoversPerGameColRaw[0]);
-    turnoversPerGameColRaw.forEach(element => {
-      if (element !== turnoversPerGameColRaw[0]) {
+    turnoversPerGameColRaw.forEach(stat => {
+      if (stat !== turnoversPerGameColRaw[0]) {
         // all items in 'turnoversPerGame' column
-        turnoversPerGameCol.push(parseFloat(element));
+        turnoversPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -331,10 +331,10 @@ request(
     let personalFoulsPerGameColRaw = playerTable[28];
     let personalFoulsPerGameCol = [];
     personalFoulsPerGameCol.push(personalFoulsPerGameColRaw[0]);
-    personalFoulsPerGameColRaw.forEach(element => {
-      if (element !== personalFoulsPerGameColRaw[0]) {
+    personalFoulsPerGameColRaw.forEach(stat => {
+      if (stat !== personalFoulsPerGameColRaw[0]) {
         // all items in 'personalFoulsPerGame' column
-        personalFoulsPerGameCol.push(parseFloat(element));
+        personalFoulsPerGameCol.push(parseFloat(stat));
       }
     });
 
@@ -342,70 +342,22 @@ request(
     let pointsPerGameColRaw = playerTable[29];
     let pointsPerGameCol = [];
     pointsPerGameCol.push(pointsPerGameColRaw[0]);
-    pointsPerGameColRaw.forEach(element => {
-      if (element !== pointsPerGameColRaw[0]) {
+    pointsPerGameColRaw.forEach(stat => {
+      if (stat !== pointsPerGameColRaw[0]) {
         // all items in 'pointsPerGame' column
-        pointsPerGameCol.push(parseFloat(element));
+        pointsPerGameCol.push(parseFloat(stat));
       }
     });
 
-    console.log(
-      "Rank",
-      rankCol[1],
-      "PlayerName",
-      playerCol[1],
-      "Position",
-      posCol[1],
-      "Team",
-      teamCol[1],
-      "Games Played",
-      gamesPlayedCol[1],
-      "Minutes per game",
-      minsPerGameCol[1],
-      "Field Goals per game",
-      fieldGoalsPerGameCol[1],
-      "Field Goal Attempts per game",
-      fieldGoalAttemptsPerGameCol[1],
-      "Field Goal percentage per game",
-      fieldGoalPercentageCol[1],
-      "threePointersPerGameCol",
-      threePointersPerGameCol[1],
-      "threePointersAttemptedPerGameCol",
-      threePointersAttemptedPerGameCol[1],
-      "threePointerPercentageCol",
-      threePointerPercentageCol[1],
-      "twoPointersPerGameCol",
-      twoPointersPerGameCol[1],
-      "twoPointersAttemptedPerGameCol",
-      twoPointersAttemptedPerGameCol[1],
-      "twoPointerPercentageCol",
-      twoPointerPercentageCol[1],
-      "effFieldGoalPercentageCol",
-      effFieldGoalPercentageCol[1],
-      "freeThrowsPerGameCol",
-      freeThrowsPerGameCol[1],
-      "freeThrowsAttemptedPerGameCol",
-      freeThrowsAttemptedPerGameCol[1],
-      "freeThrowPercentageCol",
-      freeThrowPercentageCol[1],
-      "offensiveBoardsPerGameCol",
-      offensiveBoardsPerGameCol[1],
-      "defensiveBoardsPerGameCol",
-      defensiveBoardsPerGameCol[1],
-      "totalBoardsPerGameCol",
-      totalBoardsPerGameCol[1],
-      "assistsPerGameCol",
-      assistsPerGameCol[1],
-      "stealsPerGameCol",
-      stealsPerGameCol[1],
-      "blocksPerGameCol",
-      blocksPerGameCol[1],
-      "turnoversPerGameCol",
-      turnoversPerGameCol[1],
-      "personalFoulsPerGameCol",
-      personalFoulsPerGameCol[1],
-      "pointsPerGameCol",
-      pointsPerGameCol[1],
-    );
+    // object for seeding api
+    const playerObj = {
+      name: playerCol[1],
+      pointsPerGame: pointsPerGameCol[1],
+      assistsPerGame: assistsPerGameCol[1],
+      totalBoardsPerGame: totalBoardsPerGameCol[1],
+      blocksPerGameCol: blocksPerGameCol[1],
+      stealsPerGameCol: stealsPerGameCol[1],
+    };
+    console.log("Player", playerObj);
   },
 );
