@@ -19,7 +19,7 @@ request(
     // === COLUMNS === //
 
     // rank column - each col needs this pattern to get rid of duplicates
-    let rankColRaw = playerTable[0];
+    const rankColRaw = playerTable[0];
     let rankCol = [];
     // first row is header, add this to avoid dups later
     rankCol.push(rankColRaw[0]);
@@ -33,7 +33,7 @@ request(
     });
 
     // player column
-    let playerColRaw = playerTable[1];
+    const playerColRaw = playerTable[1];
     let playerCol = [];
     playerCol.push(playerColRaw[0]);
     playerColRaw.forEach(stat => {
@@ -50,7 +50,7 @@ request(
     });
 
     // position column
-    let posColRaw = playerTable[2];
+    const posColRaw = playerTable[2];
     let posCol = [];
     posCol.push(posColRaw[0]);
     posColRaw.forEach(stat => {
@@ -61,7 +61,7 @@ request(
     });
 
     // team column
-    let teamColRaw = playerTable[4];
+    const teamColRaw = playerTable[4];
     let teamCol = [];
     teamCol.push(teamColRaw[0]);
     teamColRaw.forEach(stat => {
@@ -84,7 +84,7 @@ request(
     });
 
     // games played column
-    let gamesPlayedColRaw = playerTable[5];
+    const gamesPlayedColRaw = playerTable[5];
     let gamesPlayedCol = [];
     gamesPlayedCol.push(gamesPlayedColRaw[0]);
     gamesPlayedColRaw.forEach(stat => {
@@ -95,7 +95,7 @@ request(
     });
 
     // minutes per game column
-    let minsPerGameColRaw = playerTable[7];
+    const minsPerGameColRaw = playerTable[7];
     let minsPerGameCol = [];
     minsPerGameCol.push(minsPerGameColRaw[0]);
     minsPerGameColRaw.forEach(stat => {
@@ -106,7 +106,7 @@ request(
     });
 
     // total field goals per game column
-    let fieldGoalsPerGameColRaw = playerTable[8];
+    const fieldGoalsPerGameColRaw = playerTable[8];
     let fieldGoalsPerGameCol = [];
     fieldGoalsPerGameCol.push(fieldGoalsPerGameColRaw[0]);
     fieldGoalsPerGameColRaw.forEach(stat => {
@@ -117,7 +117,7 @@ request(
     });
 
     // total field goal attempts per game column
-    let fieldGoalAttemptsPerGameColRaw = playerTable[9];
+    const fieldGoalAttemptsPerGameColRaw = playerTable[9];
     let fieldGoalAttemptsPerGameCol = [];
     fieldGoalAttemptsPerGameCol.push(fieldGoalAttemptsPerGameColRaw[0]);
     fieldGoalAttemptsPerGameColRaw.forEach(stat => {
@@ -128,7 +128,7 @@ request(
     });
 
     // total field goal percentage column
-    let fieldGoalPercentageColRaw = playerTable[10];
+    const fieldGoalPercentageColRaw = playerTable[10];
     let fieldGoalPercentageCol = [];
     fieldGoalPercentageCol.push(fieldGoalPercentageColRaw[0]);
     fieldGoalPercentageColRaw.forEach(stat => {
@@ -139,7 +139,7 @@ request(
     });
 
     // 3-pointers made per game column
-    let threePointersPerGameColRaw = playerTable[11];
+    const threePointersPerGameColRaw = playerTable[11];
     let threePointersPerGameCol = [];
     threePointersPerGameCol.push(threePointersPerGameColRaw[0]);
     threePointersPerGameColRaw.forEach(stat => {
@@ -150,7 +150,7 @@ request(
     });
 
     // 3-pointers attempted per game column
-    let threePointersAttemptedPerGameColRaw = playerTable[12];
+    const threePointersAttemptedPerGameColRaw = playerTable[12];
     let threePointersAttemptedPerGameCol = [];
     threePointersAttemptedPerGameCol.push(
       threePointersAttemptedPerGameColRaw[0],
@@ -163,7 +163,7 @@ request(
     });
 
     // 3-pointer percentage column
-    let threePointerPercentageColRaw = playerTable[13];
+    const threePointerPercentageColRaw = playerTable[13];
     let threePointerPercentageCol = [];
     threePointerPercentageCol.push(threePointerPercentageColRaw[0]);
     threePointerPercentageColRaw.forEach(stat => {
@@ -174,7 +174,7 @@ request(
     });
 
     // 2-pointers made per game column
-    let twoPointersPerGameColRaw = playerTable[14];
+    const twoPointersPerGameColRaw = playerTable[14];
     let twoPointersPerGameCol = [];
     twoPointersPerGameCol.push(twoPointersPerGameColRaw[0]);
     twoPointersPerGameColRaw.forEach(stat => {
@@ -185,7 +185,7 @@ request(
     });
 
     // 2-pointers attempted per game column
-    let twoPointersAttemptedPerGameColRaw = playerTable[15];
+    const twoPointersAttemptedPerGameColRaw = playerTable[15];
     let twoPointersAttemptedPerGameCol = [];
     twoPointersAttemptedPerGameCol.push(twoPointersAttemptedPerGameColRaw[0]);
     twoPointersAttemptedPerGameColRaw.forEach(stat => {
@@ -196,7 +196,7 @@ request(
     });
 
     // 2-pointer percentage column
-    let twoPointerPercentageColRaw = playerTable[16];
+    const twoPointerPercentageColRaw = playerTable[16];
     let twoPointerPercentageCol = [];
     twoPointerPercentageCol.push(twoPointerPercentageColRaw[0]);
     twoPointerPercentageColRaw.forEach(stat => {
@@ -207,7 +207,7 @@ request(
     });
 
     // effective field goal percentage column
-    let effFieldGoalPercentageColRaw = playerTable[17];
+    const effFieldGoalPercentageColRaw = playerTable[17];
     let effFieldGoalPercentageCol = [];
     effFieldGoalPercentageCol.push(effFieldGoalPercentageColRaw[0]);
     effFieldGoalPercentageColRaw.forEach(stat => {
@@ -218,7 +218,7 @@ request(
     });
 
     // free-throws made per game column
-    let freeThrowsPerGameColRaw = playerTable[18];
+    const freeThrowsPerGameColRaw = playerTable[18];
     let freeThrowsPerGameCol = [];
     freeThrowsPerGameCol.push(freeThrowsPerGameColRaw[0]);
     freeThrowsPerGameColRaw.forEach(stat => {
@@ -229,7 +229,7 @@ request(
     });
 
     // free-throws attempted per game column
-    let freeThrowsAttemptedPerGameColRaw = playerTable[19];
+    const freeThrowsAttemptedPerGameColRaw = playerTable[19];
     let freeThrowsAttemptedPerGameCol = [];
     freeThrowsAttemptedPerGameCol.push(freeThrowsAttemptedPerGameColRaw[0]);
     freeThrowsAttemptedPerGameColRaw.forEach(stat => {
@@ -240,7 +240,7 @@ request(
     });
 
     // free-throw percentage column
-    let freeThrowPercentageColRaw = playerTable[20];
+    const freeThrowPercentageColRaw = playerTable[20];
     let freeThrowPercentageCol = [];
     freeThrowPercentageCol.push(freeThrowPercentageColRaw[0]);
     freeThrowPercentageColRaw.forEach(stat => {
@@ -251,7 +251,7 @@ request(
     });
 
     // offensive rebounds per game column
-    let offensiveBoardsPerGameColRaw = playerTable[21];
+    const offensiveBoardsPerGameColRaw = playerTable[21];
     let offensiveBoardsPerGameCol = [];
     offensiveBoardsPerGameCol.push(offensiveBoardsPerGameColRaw[0]);
     offensiveBoardsPerGameColRaw.forEach(stat => {
@@ -262,7 +262,7 @@ request(
     });
 
     // defensive rebounds per game column
-    let defensiveBoardsPerGameColRaw = playerTable[22];
+    const defensiveBoardsPerGameColRaw = playerTable[22];
     let defensiveBoardsPerGameCol = [];
     defensiveBoardsPerGameCol.push(defensiveBoardsPerGameColRaw[0]);
     defensiveBoardsPerGameColRaw.forEach(stat => {
@@ -273,7 +273,7 @@ request(
     });
 
     // total rebounds per game column
-    let totalBoardsPerGameColRaw = playerTable[23];
+    const totalBoardsPerGameColRaw = playerTable[23];
     let totalBoardsPerGameCol = [];
     totalBoardsPerGameCol.push(totalBoardsPerGameColRaw[0]);
     totalBoardsPerGameColRaw.forEach(stat => {
@@ -284,7 +284,7 @@ request(
     });
 
     // assists per game column
-    let assistsPerGameColRaw = playerTable[24];
+    const assistsPerGameColRaw = playerTable[24];
     let assistsPerGameCol = [];
     assistsPerGameCol.push(assistsPerGameColRaw[0]);
     assistsPerGameColRaw.forEach(stat => {
@@ -295,7 +295,7 @@ request(
     });
 
     // steals per game column
-    let stealsPerGameColRaw = playerTable[25];
+    const stealsPerGameColRaw = playerTable[25];
     let stealsPerGameCol = [];
     stealsPerGameCol.push(stealsPerGameColRaw[0]);
     stealsPerGameColRaw.forEach(stat => {
@@ -306,7 +306,7 @@ request(
     });
 
     // blocks per game column
-    let blocksPerGameColRaw = playerTable[26];
+    const blocksPerGameColRaw = playerTable[26];
     let blocksPerGameCol = [];
     blocksPerGameCol.push(blocksPerGameColRaw[0]);
     blocksPerGameColRaw.forEach(stat => {
@@ -317,7 +317,7 @@ request(
     });
 
     // turnovers per game column
-    let turnoversPerGameColRaw = playerTable[27];
+    const turnoversPerGameColRaw = playerTable[27];
     let turnoversPerGameCol = [];
     turnoversPerGameCol.push(turnoversPerGameColRaw[0]);
     turnoversPerGameColRaw.forEach(stat => {
@@ -328,7 +328,7 @@ request(
     });
 
     // personal fouls per game column
-    let personalFoulsPerGameColRaw = playerTable[28];
+    const personalFoulsPerGameColRaw = playerTable[28];
     let personalFoulsPerGameCol = [];
     personalFoulsPerGameCol.push(personalFoulsPerGameColRaw[0]);
     personalFoulsPerGameColRaw.forEach(stat => {
@@ -339,7 +339,7 @@ request(
     });
 
     // points per game column
-    let pointsPerGameColRaw = playerTable[29];
+    const pointsPerGameColRaw = playerTable[29];
     let pointsPerGameCol = [];
     pointsPerGameCol.push(pointsPerGameColRaw[0]);
     pointsPerGameColRaw.forEach(stat => {
@@ -349,15 +349,23 @@ request(
       }
     });
 
-    // object for seeding api
-    const playerObj = {
-      name: playerCol[1],
-      pointsPerGame: pointsPerGameCol[1],
-      assistsPerGame: assistsPerGameCol[1],
-      totalBoardsPerGame: totalBoardsPerGameCol[1],
-      blocksPerGameCol: blocksPerGameCol[1],
-      stealsPerGameCol: stealsPerGameCol[1],
-    };
-    console.log("Player", playerObj);
+    // creating array of players
+    let playersArray = [];
+    for (let i = 0; i < playerCol.length; i++) {
+      // object for seeding api
+      let player = {
+        name: playerCol[i],
+        pointsPerGame: pointsPerGameCol[i],
+        assistsPerGame: assistsPerGameCol[i],
+        totalBoardsPerGame: totalBoardsPerGameCol[i],
+        blocksPerGameCol: blocksPerGameCol[i],
+        stealsPerGameCol: stealsPerGameCol[i],
+      };
+      if (player.name !== undefined) {
+        playersArray.push(player);
+      } else {
+        // do nothing
+      }
+    }
   },
 );
