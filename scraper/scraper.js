@@ -1,8 +1,8 @@
-const request = require("request");
+const request = require("request-promise");
 const cheerio = require("cheerio");
 // since our data is a table, use table parser to clean up
 const cheerioTableparser = require("cheerio-tableparser");
-// result vars
+// result var
 let playersArray = [];
 // sends request to site to be scraped
 request(
@@ -367,8 +367,10 @@ request(
         // do nothing
       }
     }
-    return playersArray;
+    // return playersArray;
   },
-);
-
-console.log("PlayersArray", playersArray);
+)
+  .then(res => {
+    return playersArray;
+  })
+  .catch(err => console.log("ERROR RIGHT HERE", err));

@@ -1,5 +1,5 @@
 // import scraper data for seeding data
-const players = require("../../../scraper/scraper.js");
+let players = require("../../../scraper/scraper.js");
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
@@ -7,8 +7,6 @@ exports.seed = function(knex, Promise) {
     .truncate()
     .then(function() {
       // Inserts seed entries
-      return knex("Players").insert([
-        { name: "Bugs", ppg: 15, apg: 5, rpg: 1, bpg: 55, spg: 14 },
-      ]);
+      return knex("Players").insert(players);
     });
 };

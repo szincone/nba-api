@@ -2,11 +2,11 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable("Players", table => {
     table.increments("id").primary();
     table.string("name", 120).notNullable();
-    table.integer("ppg").notNullable();
-    table.integer("apg").notNullable();
-    table.integer("rpg").notNullable();
-    table.integer("bpg").notNullable();
-    table.integer("spg").notNullable();
+    table.integer("pointsPerGame").notNullable();
+    table.integer("assistsPerGame").notNullable();
+    table.integer("totalBoardsPerGame").notNullable();
+    table.integer("blocksPerGameCol").notNullable();
+    table.integer("stealsPerGameCol").notNullable();
   });
 };
 
