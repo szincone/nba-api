@@ -367,18 +367,13 @@ const table = request(
         // do nothing
       }
     }
-    return playersArray;
   },
 )
   .then(() => {
-    // alex abrines stats displaying below
-    console.log("players array", playersArray[1]);
     return playersArray;
   })
   .catch(err => console.log("ERROR RIGHT HERE", err));
 
-// module.exports = {
-//   getPlayersArray,
-// };
-
-console.log("table", table);
+module.exports = {
+  table,
+};
