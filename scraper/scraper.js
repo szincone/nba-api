@@ -2,10 +2,10 @@ const request = require("request-promise");
 const cheerio = require("cheerio");
 // since our data is a table, use table parser to clean up
 const cheerioTableparser = require("cheerio-tableparser");
-// result var
+// result vars
 let playersArray = [];
 // sends request to site to be scraped
-request(
+const table = request(
   "https://www.basketball-reference.com/leagues/NBA_2017_per_game.html",
   (error, res, html) => {
     let playerTable = [];
@@ -367,10 +367,18 @@ request(
         // do nothing
       }
     }
-    // return playersArray;
+    return playersArray;
   },
 )
-  .then(res => {
+  .then(() => {
+    // alex abrines stats displaying below
+    console.log("players array", playersArray[1]);
     return playersArray;
   })
   .catch(err => console.log("ERROR RIGHT HERE", err));
+
+// module.exports = {
+//   getPlayersArray,
+// };
+
+console.log("table", table);
