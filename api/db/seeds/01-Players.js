@@ -10,9 +10,19 @@ async function getPlayerData() {
     throw err;
   }
 }
-getPlayerData().then(value => {
-  console.log("VALUE", value[1], value.length);
-});
+
+// exports.seed = function(knex, Promise) {
+//   // Deletes ALL existing entries
+//   return knex("Players")
+//     .truncate()
+//     .then(function() {
+//       // Inserts seed entries
+//       return getPlayerData().then(value => {
+//         return knex("Players").insert(value.slice(1, 100));
+//       });
+//     });
+// };
+// end working
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex("Players")
@@ -20,8 +30,11 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return getPlayerData().then(value => {
-        return knex("Players").insert(value);
+        return knex("Players")
+          .insert(value.slice(1, 100))
+          .then(function() {
+            return knex("Players").insert(value.slice(101, 200));
+          });
       });
     });
 };
-// end working
