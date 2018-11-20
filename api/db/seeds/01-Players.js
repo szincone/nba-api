@@ -10,7 +10,9 @@ async function getPlayerData() {
     throw err;
   }
 }
-
+getPlayerData().then(value => {
+  console.log("VALUE", value[1], value.length);
+});
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex("Players")
