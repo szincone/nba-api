@@ -4,11 +4,10 @@ let { table } = require("../../../scraper/scraper.js");
 async function getPlayerData() {
   try {
     let response = await table;
-    console.log("RESPONSE", response);
     return response;
-  } catch (e) {
-    console.log("ERROR", e);
-    throw e;
+  } catch (err) {
+    console.log("ERROR", err);
+    throw err;
   }
 }
 
