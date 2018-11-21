@@ -10,7 +10,7 @@ NBA player stats API that seeds and scrapes all data from [basketball-reference]
 
 ## scraper
 - Cheerio
-- Cheerio-TableParser
+- Cheerio-Tableparser
 - Request-Promise
 
 ## back-end
