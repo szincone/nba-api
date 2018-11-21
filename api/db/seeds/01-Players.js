@@ -40,6 +40,9 @@ exports.seed = function(knex, Promise) {
                   .insert(value.slice(200, 300))
                   .then(function() {
                     return knex("Players").insert(value.slice(200, 300));
+                  })
+                  .then(function() {
+                    return knex("Players").insert(value.slice(300, 400));
                   });
               });
           });
