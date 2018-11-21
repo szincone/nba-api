@@ -33,7 +33,15 @@ exports.seed = function(knex, Promise) {
         return knex("Players")
           .insert(value.slice(1, 100))
           .then(function() {
-            return knex("Players").insert(value.slice(101, 200));
+            return knex("Players")
+              .insert(value.slice(100, 200))
+              .then(function() {
+                return knex("Players")
+                  .insert(value.slice(200, 300))
+                  .then(function() {
+                    return knex("Players").insert(value.slice(200, 300));
+                  });
+              });
           });
       });
     });
