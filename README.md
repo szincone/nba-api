@@ -3,9 +3,9 @@ NBA API that scrapes [basketball-reference](basketball-reference.com) to seed th
 
 ## how to use
 - Fork and clone.
-- cd into `api` and run `knex migrate:latest` to create db
-- while in `api`, run `knex seed:run` to seed the db w/ the scraper data
-- still inside `api`, run `yarn start` to start the API
+- `cd` into `api` and run `knex migrate:latest` to create db
+- While in `api`, run `knex seed:run` to seed the db w/ the scraper data
+- Still inside `api`, run `yarn start` to start the API
 - API will be running on `localhost:9000/api/players`
 
 ## scraper
