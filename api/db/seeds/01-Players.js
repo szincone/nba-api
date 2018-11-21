@@ -10,7 +10,7 @@ async function getPlayerData() {
     throw err;
   }
 }
-
+getPlayerData().then(value => console.log("VALUE", value[450]));
 // exports.seed = function(knex, Promise) {
 //   // Deletes ALL existing entries
 //   return knex("Players")
@@ -31,18 +31,33 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return getPlayerData().then(value => {
         return knex("Players")
-          .insert(value.slice(1, 100))
+          .insert(value.slice(1, 150))
           .then(function() {
             return knex("Players")
-              .insert(value.slice(100, 200))
+              .insert(value.slice(150, 300))
               .then(function() {
                 return knex("Players")
-                  .insert(value.slice(200, 300))
+                  .insert(value.slice(300, 450))
                   .then(function() {
-                    return knex("Players").insert(value.slice(200, 300));
+                    if (value.length - 450 <= value.length) {
+                      return knex("Players").insert(value.slice(450, 600));
+                    }
                   })
                   .then(function() {
-                    return knex("Players").insert(value.slice(300, 400));
+                    if (
+                      value.length - 600 <= value.length &&
+                      value.length - 600 > 0
+                    ) {
+                      return knex("Players").insert(value.slice(600, 750));
+                    }
+                  })
+                  .then(function() {
+                    if (
+                      value.length - 750 <= value.length &&
+                      value.length - 750 > 0
+                    ) {
+                      return knex("Players").insert(value.slice(750));
+                    }
                   });
               });
           });
