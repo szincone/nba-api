@@ -1,5 +1,5 @@
 # nba_api :basketball:
-NBA player stats API that seeds and scrapes all data from [basketball-reference](basketball-reference.com).
+NBA player stats API that seeds and scrapes all data from [Basketball-Reference.com](basketball-reference.com).
 
 ## how to use
 - Fork and clone.
