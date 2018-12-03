@@ -1,4 +1,4 @@
-# nba_api :basketball:
+# nba-api :basketball:
 NBA player stats API that seeds and scrapes all data from [Basketball-Reference.com](basketball-reference.com).
 
 ## how to use
