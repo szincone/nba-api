@@ -21,4 +21,4 @@ NBA player stats API that seeds and scrapes all data from [Basketball-Reference.
 - SQLite
 
 ## authors
-- Sawyer Zincone -_intial work_- [szincone](https://github.com/szincone)
+- Sawyer Zincone -_initial work_- [szincone](https://github.com/szincone)
