@@ -1,3 +1,4 @@
+require("dotenv").config({ path: "../api/.env" });
 const request = require("request-promise");
 const cheerio = require("cheerio");
 // since our data is a table, use table parser to clean up
@@ -5,8 +6,7 @@ const cheerioTableparser = require("cheerio-tableparser");
 // result vars
 let playersArray = [];
 // url to be scraped
-const URL =
-  "https://www.basketball-reference.com/leagues/NBA_2017_per_game.html";
+const URL = process.env.player_stats_url;
 
 // sends request to site to be scraped
 const table = request(URL, (error, res, html) => {
