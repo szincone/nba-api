@@ -1,14 +1,15 @@
 {
   "name": "nba-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "web-scraper that gets the player data",
+  "main": "scraper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Sawyer Zincone",
-  "license": "",
+  "license": "MIT",
+  "homepage": "https://github.com/szincone/nba-api",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "cheerio-tableparser": "^1.0.1",
