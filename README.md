@@ -1,15 +1,21 @@
-# nba-api :basketball:
-NBA player stats API that seeds and scrapes all data from [Basketball-Reference.com](basketball-reference.com).
+# :basketball: nba-api
+NBA web API and web-scraper built using Node.js and Cheerio.
+- All player data is scraped from [basketball-reference.com](https://www.basketball-reference.com/) and then seeded into the SQLite Database using Knex. Player data can then be accessed after starting your Express server.
 
 ## how to use
 - Fork and clone.
 - `cd` into `scraper` and run `npm install` to install scraper dependencies
-- `cd` into `api` and run `yarn` to install api dependencies
-- While in `api`, run `knex migrate:latest` to create db and `knex seed:run` to seed the db w/ the scraper data
+- `cd` into `api` and run `yarn` to install API dependencies
+- While in `api`, run `knex migrate:latest` to create the SQLite db and `knex seed:run` to seed the db w/ the scraper data
 - Still inside `api`, run `yarn start` to start the API
 - API will be running on `localhost:9000/api/players`
 
-## scraper
+## sample .env file
+```
+player_stats_url=https://www.player-stats-site-to-be-scraped.com
+```
+
+## web-scraper
 - Cheerio
 - Cheerio-Tableparser
 - Request-Promise
@@ -21,4 +27,9 @@ NBA player stats API that seeds and scrapes all data from [Basketball-Reference.
 - SQLite
 
 ## authors
-- Sawyer Zincone -_initial work_- [szincone](https://github.com/szincone)
+- Sawyer Zincone -_initial work_- [szincone](https://github.com/szincone) :four_leaf_clover:
+
+## license
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/szincone/nba-api/blob/master/LICENSE) file for details.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-ff69b4.svg)](https://opensource.org/licenses/MIT)
