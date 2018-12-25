@@ -9,7 +9,7 @@ module.exports = {
   async getPlayer(id) {
     return await db("Players")
       .where({
-        id: id,
+        id,
       })
       .select();
   },
