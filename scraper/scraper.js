@@ -19,7 +19,7 @@ const table = request(URL, (error, res, html) => {
     playerTable = $("table").parsetable(true);
   }
 
-  // === COLUMNS === //
+  // =============================== COLUMNS =============================== //
 
   // rank column - each col needs this pattern to get rid of duplicates
   const rankColRaw = playerTable[0];
@@ -349,6 +349,7 @@ const table = request(URL, (error, res, html) => {
       pointsPerGameCol.push(parseFloat(stat));
     }
   });
+  // =============================== END COLUMNS =============================== //
 
   // creating array of players
   for (let i = 0; i < playerCol.length; i++) {
