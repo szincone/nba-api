@@ -9,7 +9,7 @@ let playersArray = [];
 const URL = process.env.player_stats_url;
 
 // sends request to site to be scraped
-const table = request(URL, (error, res, html) => {
+const playerData = request(URL, (error, res, html) => {
   let playerTable = [];
   if (!error && res.statusCode === 200) {
     $ = cheerio.load(html);
@@ -375,5 +375,5 @@ const table = request(URL, (error, res, html) => {
   .catch(err => console.log("ERROR RIGHT HERE", err));
 
 module.exports = {
-  table,
+  playerData,
 };
