@@ -1,54 +1,38 @@
 // import scraper data for seeding data
-let { table } = require("../../../scraper/scraper.js");
+let { playerData } = require("../../../scraper/scraper.js");
 
-const getPlayerData = async () => {
+async function getPlayerData() {
   try {
-    let response = await table;
-    return response;
+    let scraperResponse = await playerData;
+    return scraperResponse;
   } catch (err) {
-    console.log("ERROR", err);
+    console.log(`getPlayerData() error: ${err}`);
     throw err;
   }
-};
+}
 
-exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex("Players")
-    .truncate()
-    .then(function() {
-      // Inserts seed entries
-      return getPlayerData().then(value => {
-        return knex("Players")
-          .insert(value.slice(1, 150))
-          .then(function() {
-            return knex("Players")
-              .insert(value.slice(150, 300))
-              .then(function() {
-                return knex("Players")
-                  .insert(value.slice(300, 450))
-                  .then(function() {
-                    if (value.length - 450 <= value.length) {
-                      return knex("Players").insert(value.slice(450, 600));
-                    }
-                  })
-                  .then(function() {
-                    if (
-                      value.length - 600 <= value.length &&
-                      value.length - 600 > 0
-                    ) {
-                      return knex("Players").insert(value.slice(600, 750));
-                    }
-                  })
-                  .then(function() {
-                    if (
-                      value.length - 750 <= value.length &&
-                      value.length - 750 > 0
-                    ) {
-                      return knex("Players").insert(value.slice(750));
-                    }
-                  });
-              });
-          });
-      });
-    });
+exports.seed = async function(knex, Promise) {
+  const fullPlayerTable = await getPlayerData();
+  try {
+    await knex("Players").truncate();
+    await knex("Players").insert(fullPlayerTable.slice(1, 150));
+    await knex("Players").insert(fullPlayerTable.slice(150, 300));
+    await knex("Players").insert(fullPlayerTable.slice(300, 450));
+    if (fullPlayerTable.length - 450 <= fullPlayerTable.length) {
+      await knex("Players").insert(fullPlayerTable.slice(450, 600));
+    } else if (
+      fullPlayerTable.length - 600 <= fullPlayerTable.length &&
+      fullPlayerTable.length - 600 > 0
+    ) {
+      await knex("Players").insert(fullPlayerTable.slice(600, 750));
+    } else if (
+      fullPlayerTable.length - 750 <= fullPlayerTable.length &&
+      fullPlayerTable.length - 750 > 0
+    ) {
+      await knex("Players").insert(fullPlayerTable.slice(750));
+    }
+  } catch (err) {
+    console.log(`Seeding error: ${err}`);
+    throw err;
+  }
 };
