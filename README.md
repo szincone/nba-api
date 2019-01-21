@@ -7,7 +7,7 @@ NBA web API for player per game averages and other stats.
 - `cd` into `scraper` and run `npm install` to install web-scraper dependencies
 - `cd` into `api` and run `yarn` to install API dependencies
 - Update your .env.sample (inside of `api`) with your `player_stats_url` and PORT variables
-  - Get rid of `.sample` and add the `player stats: per game` URL
+  - Get rid of the `.sample` file-ending and add the `player stats: per game` URL
 - While in `api`, run `knex migrate:latest` to create the SQLite db and `knex seed:run` to seed the db w/ the web-scraper data
 - Still inside `api`, run `yarn start` to start the API
 - API will be running on `localhost:9000/api/players`
