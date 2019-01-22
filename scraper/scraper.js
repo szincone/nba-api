@@ -369,10 +369,8 @@ const playerData = request(URL, (error, res, html) => {
     }
   }
 })
-  .then(() => {
-    return playersArray;
-  })
-  .catch(err => console.log("ERROR RIGHT HERE", err));
+  .then(() => playersArray)
+  .catch(err => console.log("Scraper error: ", err));
 
 module.exports = {
   playerData,
