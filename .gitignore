@@ -55,10 +55,13 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+*.env
 
 # next.js build output
-.next
+*.next
 
 # dbs
 *.sqlite3
+
+# eslint files
+*.eslintrc.js
