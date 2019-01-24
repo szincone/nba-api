@@ -1,15 +1,15 @@
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: 'sqlite3',
     connection: {
-      filename: "./db/playerStats.sqlite3",
+      filename: './db/playerStats.sqlite3',
     },
     useNullAsDefault: true,
     migrations: {
-      directory: "./db/migrations",
+      directory: './db/migrations',
     },
     seeds: {
-      directory: "./db/seeds",
+      directory: './db/seeds',
     },
   },
 };
