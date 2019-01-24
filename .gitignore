@@ -65,3 +65,6 @@ typings/
 
 # eslint files
 *.eslintrc.js
+
+# vscode
+.vscode
