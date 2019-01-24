@@ -1,10 +1,11 @@
-"use strict";
-require("dotenv").config();
-const express = require("express");
-const server = new express();
+require('dotenv').config();
+const express = require('express');
+
+const server = express();
 
 // middleware
-const configureMiddleware = require("./middleware/middleware.js");
+const configureMiddleware = require('./middleware/middleware.js');
+
 configureMiddleware(server);
 
 const PORT = process.env.PORT || 9000;
