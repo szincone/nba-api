@@ -4,7 +4,11 @@
   "description": "express server seeded w/ nba web-scraper data",
   "main": "index.js",
   "scripts": {
+    "test": "jest --watch --verbose",
     "start": "nodemon"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "Sawyer Zincone",
@@ -19,6 +23,8 @@
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "jest": "^24.0.0",
+    "nodemon": "^1.18.4",
+    "supertest": "^3.4.2"
   }
 }
