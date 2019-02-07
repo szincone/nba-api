@@ -3,12 +3,10 @@ const request = require('request-promise');
 const cheerio = require('cheerio');
 // since our data is a table, use table parser to clean up
 const cheerioTableparser = require('cheerio-tableparser');
-// result vars
-const playersArray = [];
-// url to be scraped
-const URL = process.env.player_stats_url;
 
-// sends request to site to be scraped
+const URL = process.env.player_stats_url;
+const playersArray = [];
+
 const playerData = request(URL, (error, res, html) => {
   let playerTable = [];
   if (!error && res.statusCode === 200) {
@@ -369,7 +367,9 @@ const playerData = request(URL, (error, res, html) => {
   });
 })
   .then(() => playersArray)
-  .catch((err) => { setTimeout(() => { throw err; }); });
+  .catch((err) => {
+    throw err;
+  });
 
 module.exports = {
   playerData,
