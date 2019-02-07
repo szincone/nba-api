@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../api/.env' });
+require('dotenv').config({ PATH: '../api/.env' });
 const request = require('request-promise');
 const cheerio = require('cheerio');
 // since our data is a table, use table parser to clean up
@@ -18,7 +18,6 @@ const playerData = request(URL, (error, res, html) => {
     cheerioTableparser($);
     playerTable = $('table').parsetable(true);
   }
-
   // =============================== COLUMNS =============================== //
 
   // rank column - each col needs this pattern to get rid of duplicates
