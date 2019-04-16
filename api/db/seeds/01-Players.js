@@ -12,23 +12,16 @@ async function getPlayerData() {
 
 exports.seed = async function insertPlayerData(knex) {
   const fullPlayerTable = await getPlayerData();
+  let [startSlice, stopSlice, counter] = [1, 150, fullPlayerTable.length];
   try {
-    await knex('Players').truncate();
-    await knex('Players').insert(fullPlayerTable.slice(1, 150));
-    await knex('Players').insert(fullPlayerTable.slice(150, 300));
-    await knex('Players').insert(fullPlayerTable.slice(300, 450));
-    if (fullPlayerTable.length - 450 <= fullPlayerTable.length) {
-      await knex('Players').insert(fullPlayerTable.slice(450, 600));
-    } else if (
-      fullPlayerTable.length - 600 <= fullPlayerTable.length
-      && fullPlayerTable.length - 600 > 0
-    ) {
-      await knex('Players').insert(fullPlayerTable.slice(600, 750));
-    } else if (
-      fullPlayerTable.length - 750 <= fullPlayerTable.length
-      && fullPlayerTable.length - 750 > 0
-    ) {
-      await knex('Players').insert(fullPlayerTable.slice(750));
+    while (counter > 0) {
+      // eslint-disable-next-line no-await-in-loop
+      await knex('Players').insert(
+        fullPlayerTable.slice(startSlice, stopSlice),
+      );
+      startSlice += 50;
+      stopSlice += 50;
+      counter -= 100;
     }
   } catch (err) {
     throw err;
