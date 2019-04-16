@@ -21,7 +21,7 @@ exports.seed = async function insertPlayerData(knex) {
       );
       startSlice += 50;
       stopSlice += 50;
-      counter -= 100;
+      counter -= 50;
     }
   } catch (err) {
     throw err;
